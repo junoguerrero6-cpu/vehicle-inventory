@@ -1,26 +1,44 @@
 package com.pluralsight;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class VehicleInventoryApp {
 
     public static void main(String[] args) {
-        Scanner myscanner = new Scanner(System.in);
+        Scanner carscanner = new Scanner(System.in);
 
        // Create an empty array list of vehicles objects
         ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>();
 
         //create a vehicle , add it to the array
 
-        Vehicle car = new Vehicle(101121,"Ford explorer","red", 4500,13500);
+        Vehicle car1 = new Vehicle(101121,"Ford explorer","red", 4500,13500);
         // add that object to the array
-        Vehicle.add(car);
+        Vehicle.add(car1);
 
         // add another vehicle to you arrays
 
-        Vehicle yourcar = new Vehicle(101122,"Toyota camry","blue", 60000,11000);
-        Vehicle.add(car);
+        Vehicle car2 = new Vehicle(101122,"Toyota Camry","Blue",60000,11000);
+        Vehicle.add(car2);
+
+        Vehicle car3 = new Vehicle(101123,"Chevrolet Malibu","Black",50000,9700);
+        Vehicle.add(car3);
+
+        Vehicle car4 = new Vehicle(101124,"Honda Civic","White",70000,7500);
+        Vehicle.add(car4);
+
+        Vehicle car5 = new Vehicle(101125,"Subaru Outback","Green",55000,14500
+        );
+        Vehicle.add(car5);
+
+        Vehicle car6 = new Vehicle(101126,"Jeep Wrangler","Yellow",30000,16000);
+        Vehicle.add(car6);
+
+
+
 
         // loop the array list of veicles called : vehicles
         for (Vehicle currentvehcile : vehicles){
@@ -38,21 +56,54 @@ public class VehicleInventoryApp {
                 Enter your command:""";
         System.out.println(menuPrompt);
 
-        String userInput = myScanner.nextLine();
+
+        String userInput = carscanner.nextLine();
 
         switch (userInput) {
             case "1" -> {
                 // Print a list of all the vehicles
+                System.out.println("List all vehicles");
+                String listAllVehicles = carscanner.nextLine();
+
                 for (Vehicle currentVehicle : vehicles) {
                     currentVehicle.display();
                 }
             }
             case "2" -> {
-//                searchVehicles();
+                System.out.println("Search by make and model");
+                String searchMakeModel = carscanner.nextLine();
+
+            }
+            case "3" -> {
+                System.out.println("Enter minimum search price  range");
+                String priceMinimumText = myscanner.nextLine();
+               double priceMinimum = Double.parseDouble((priceMinimumText);
+
+               System.out.println("Enter maximum search price range");
+               String priceMaximumText = myScanner.nextLine();
+               double priceMaximum = Double.parseDouble(priceMaximum);
+
+
+
+            }
+            case "4" -> {
+                System.out.println("Enter the color you want");
+                String seachColor = carscanner.nextLine();
+
+            }
+            case "5" -> {
+                System.out.println("add a vehicle");
+                String addVehicle = carscanner.nextLine();
+
+            }
+            case "6" -> {
+                System.out.println("Bye!");
             }
 
-
         }
+
     }
 
 }
+
+
