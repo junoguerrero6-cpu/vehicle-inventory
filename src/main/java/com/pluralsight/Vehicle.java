@@ -19,6 +19,10 @@ public class Vehicle {
         this.price = price;
 }
 
+    public static void add(Vehicle car) {
+
+    }
+
     public String getMakemodel() {
         return makeModel;
     }
@@ -61,4 +65,10 @@ public class Vehicle {
     public void setPrice(double price) {
         this.price = price;
     }
+    public void display(){
+        System.out.println("VIN: %s, Make/Model: %s");
+    }
+
+
+
 }
